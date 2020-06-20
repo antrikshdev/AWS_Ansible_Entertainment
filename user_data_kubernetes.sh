@@ -13,9 +13,7 @@ sudo apt-get install kubeadm kubelet kubectl -y
 sudo apt-mark hold kubeadm kubelet kubectl
 sudo swapoff -a
 
-sudo kubeadm init --ignore-preflight-errors=ALL > /home/ubuntu/kubectl_join.txt
-mkdir -p $HOME/.kube ; sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config ; sudo chown $(id -u):$(id -g) $HOME/.kube/config
-kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+
 #sudo apt-get install nginx -y
 #sudo wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
 #sudo echo "deb https://pkg.jenkins.io/debian-stable binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list
